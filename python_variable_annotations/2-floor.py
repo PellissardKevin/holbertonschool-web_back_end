@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+"""Definition of floor """
+
+
+def floor(n: float) -> float:
+    """Definition of floor method"""
+
+    return int(n)
