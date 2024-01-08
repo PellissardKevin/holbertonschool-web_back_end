@@ -5,7 +5,8 @@
 def list_all(mongo_collection):
     """Method to list all"""
     dic = []
-    if mongo_collection.find_one():
-        dic.append(mongo_collection.find_one())
+    if mongo_collection.find():
+        for data in mongo_collection.find():
+            dic.append(data)
 
     return dic
