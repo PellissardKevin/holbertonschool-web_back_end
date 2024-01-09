@@ -5,20 +5,21 @@
 from pymongo import MongoClient
 
 
-client = MongoClient('mongodb://127.0.0.1:27017')
-collection = client.logs.nginx
-count = collection.count_documents({})
-methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
+if __name__ == "__main__":
+    """provide stats about nginx logs"""
+    client = MongoClient('mongodb://127.0.0.1:27017')
+    db = client['logs']
+    collection = db['nginx']
+    count = collection.count_documents({})
+    methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
 
-print(f"{count} logs")
-print("Methods:")
-for method in methods:
-    count = collection.count_documents({"method": method})
-    print(f"\tmethod {method}: {count}")
+    print(f"{count} logs")
+    print("Methods:")
+    for method in methods:
+        count = collection.count_documents({"method": method})
+        print(f"\tmethod {method}: {count}")
 
-check = collection.count_documents({"method": "GET", "path": "/status"})
+    print(collection.count_documents({"method": "GET", "path": "/status"}),
+          "status check")
 
-print(f"{check} status check")
-
-# Close MongoDB connection
-client.close()
+    client.close()
