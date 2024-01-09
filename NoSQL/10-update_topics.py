@@ -3,7 +3,8 @@
 
 
 def update_topics(mongo_collection, name, topics):
-    """Method to change topics in document"""
+    """
+    Method to change topics in document
+    """
 
-    return mongo_collection.update_many({"name": name},
-    {"$set": {"name": topics}})
+    mongo_collection.update_many({"name": name}, {"$set": {"name": topics}})
