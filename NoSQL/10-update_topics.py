@@ -7,4 +7,4 @@ def update_topics(mongo_collection, name, topics):
     Method to change topics in document
     """
 
-    mongo_collection.update_many({"name": name}, {"$set": {"name": topics}})
+    mongo_collection.update_many({"name": name}, {"$set": {"topics": topics}})
