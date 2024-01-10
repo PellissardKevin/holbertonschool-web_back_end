@@ -49,14 +49,14 @@ class Server:
 
         start_index = index if index is not None else 0
         end_index = start_index + page_size - 1
+        size_data = len(self.dataset())
 
         assert start_index >= 0
-        assert end_index < len(self.dataset())
+        assert end_index < size_data
 
         current_page = [self.dataset()[i] for i in range(start_index,
                                                          min(end_index + 1,
-                                                             len(self.dataset(
-                                                             ))))]
+                                                             size_data))]
 
         next_index = end_index + 1
 
