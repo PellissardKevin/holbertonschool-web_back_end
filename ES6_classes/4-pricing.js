@@ -8,8 +8,8 @@ export default class Pricing {
     if (!(currency instanceof Currency)) {
       throw new TypeError('currency must be a Currency');
     }
-    this._amount = amount
-    this._currency = currency
+    this._amount = amount;
+    this._currency = currency;
   }
 
   get amount() {
@@ -25,7 +25,7 @@ export default class Pricing {
   }
 
   set currency(currency) {
-    this._currency = currency
+    this._currency = currency;
   }
 
   displayFullPrice() {
