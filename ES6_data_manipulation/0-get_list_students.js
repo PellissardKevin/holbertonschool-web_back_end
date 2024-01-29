@@ -7,7 +7,7 @@ export default function getListStudents() {
 
 	for (var i = 0; i < listStudents.length; i++) {
 		const listStudentsArray = listStudents[i].split(',');
-		const id = listStudentsArray[0];
+		const id = parseInt(listStudentsArray[0]);
 		const firstName = listStudentsArray[1];
 		const location = listStudentsArray[2];
 		deck.push({ id, firstName, location });
