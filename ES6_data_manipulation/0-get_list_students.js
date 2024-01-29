@@ -5,7 +5,7 @@ export default function getListStudents() {
 	];
 	let deck = [];
 
-	for (var i = 0; i < listStudents.length; i++) {
+	for (let i = 0; i < listStudents.length; i++) {
 		const listStudentsArray = listStudents[i].split(',');
 		const id = parseInt(listStudentsArray[0]);
 		const firstName = listStudentsArray[1];
