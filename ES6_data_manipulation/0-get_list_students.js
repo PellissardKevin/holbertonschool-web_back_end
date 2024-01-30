@@ -1,16 +1,9 @@
 export default function getListStudents() {
-	let listStudents = ["1,Guillaume,San Francisco",
-		"2,James,Columbia",
-		"5,Serena,San Francisco"
+	const listStudents = [
+		{ id: 1, firstName: 'Guillaume', location: 'San Francisco' },
+		{ id: 2, firstName: 'James', location: 'Columbia' },
+		{ id: 5, firstName: 'Serena', location: 'San Francisco' },
 	];
-	let deck = [];
 
-	for (let i = 0; i < listStudents.length; i++) {
-		const listStudentsArray = listStudents[i].split(',');
-		const id = parseInt(listStudentsArray[0]);
-		const firstName = listStudentsArray[1];
-		const location = listStudentsArray[2];
-		deck.push({ id, firstName, location });
-	}
-	return deck;
+	return listStudents;
 };
